@@ -1,0 +1,29 @@
+<section class="container pt-5 text-center pb-4">
+
+  <h1 class="text-main pb-3">All Brands</h1>
+
+  <div class="row g-4">
+
+    <div class="col-md-4" *ngFor="let item of Brands">
+
+      <div class="product">
+
+        <div class="pb-4">
+          <img
+            class="w-100"
+            height="270"
+            [src]="item.image"
+            [alt]="item.name"
+          />
+
+        </div>
+
+        <h3 class="h5 text-main fw-bold">{{ item.name }}</h3>
+
+      </div>
+
+      </div>
+
+  </div>
+
+</section>

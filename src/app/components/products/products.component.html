@@ -1,0 +1,31 @@
+<!-- prodects -->
+<section class="my-4">
+  <h2>Popular Prodects</h2>
+
+  <input type="search" class="form-control w-50 mx-auto my-3" placeholder="Search....." [(ngModel)]="searchTrem">
+
+  <div class="row g-4">
+    <div class="col-md-2" *ngFor="let item of prodect | search: searchTrem ">
+      <div class="product">
+        <div class="p-2 cursor-pointer" [routerLink]="['/details', item._id]">
+          <img class="w-100" [src]="item.imageCover" [alt]="item.title" />
+          <h3 class="h6">{{ item.category.name | buy | uppercase }}</h3>
+          <h4 class="h6">{{ item.title | tremtext:2 }}</h4>
+
+          <div class="d-flex align-items-center justify-content-between">
+            <span>
+              {{ item.price | currency: 'EUR'}}
+            </span>
+
+            <span>
+              <i class="fas fa-star rating-color"></i>
+              <span class="text-muted">{{ item.ratingsAverage }}</span>
+            </span>
+          </div>
+        </div>
+
+        <button class="btn-main w-100" (click)="addCart(item._id)">Add Product</button>
+      </div>
+    </div>
+  </div>
+</section>

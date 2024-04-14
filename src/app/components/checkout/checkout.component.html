@@ -1,0 +1,30 @@
+<section class="bg-main-light p-4 rounded-3 my-3 shadow w-50 mx-auto">
+
+  <form [formGroup]="checkout" ngSwitch="handleForm()">
+
+    <div>
+
+      <label for="details"></label>
+      <textarea id="details" class="form-control" formControlName="details" placeholder="details...."></textarea>
+
+    </div>
+
+    <div>
+
+      <label for="phone"></label>
+      <input type="tel" id="phone" class="form-control" formControlName="phone" placeholder="phone...."/>
+
+    </div>
+
+    <div>
+
+      <label for="city"></label>
+      <input type="text" id="city" class="form-control" formControlName="city" placeholder="city...."/>
+
+    </div>
+
+
+    <button class="btn btn-main mt-3">Checkout</button>
+  </form>
+
+</section>
